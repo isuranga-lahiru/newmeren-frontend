@@ -5,7 +5,7 @@ export default function AdminPage() {
   return (
     <div className='w-full h-full flex bg-purple-600'>
 
-        <div className='w-[300px] h-full bg-white flex flex-col'>
+        <div className='w-75 h-full bg-white flex flex-col'>
             <h1 className='text-xl font-bold p-4 bg-blue-700 width-50px'>Using anchore tag</h1>
             <a href='/admin' className='block p-4 border-b bg-gray-400'>Orders</a>
             <a href='/admin/products' className='block p-4 border-b bg-gray-400'>Products</a>
