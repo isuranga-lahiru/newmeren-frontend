@@ -7,18 +7,29 @@ import { MdEmail } from "react-icons/md"
 import { Link } from "react-router-dom"
 
 
+
 export default function loginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-function handleLogin() {
+async function handleLogin() {
   // Here you would typically send a request to your backend to authenticate the user.
   // For demonstration purposes, we'll just log the email and password to the console.
-  console.log("Email:", email);
-  console.log("Password:", password);
-  toast.success("Login successful!"); // Show a success toast message
-  await axios.post("http://localhost:3000/users/login", { email, password })
+    console.log("Email:", email);
+    console.log("Password:", password);
+  try {
+    const response = await axios.post("http://localhost:3000/users/login", {
+      email: email,
+      password: password
+    });
+    console.log(response);
+    toast.success("Login successful!"); // Show a success toast message
+  } catch(error) {
+    console.error();
+    toast.error("Login failed! Please check your credentials."); // Show an error toast message
+  }
 }
+
   return (
     <div className="w-full h-full bg-[url('./login-bg.jpg')] bg-cover bg-center bg-no-repeat flex items-center justify-center">
     
