@@ -6,12 +6,7 @@ export default function AdminPage() {
     <div className='w-full h-full flex bg-purple-600'>
 
         <div className='w-75 h-full bg-white flex flex-col'>
-            <h1 className='text-xl font-bold p-4 bg-blue-700 width-50px'>Using anchore tag</h1>
-            <a href='/admin' className='block p-4 border-b bg-gray-400'>Orders</a>
-            <a href='/admin/products' className='block p-4 border-b bg-gray-400'>Products</a>
-            <a href='/admin/users' className='block p-4 border-b bg-gray-400'>Users</a>
-{/* // Using anchor tag will cause the page to reload and lose the state of the application */}
-
+            
             <h1 className='text-xl font-bold p-4 bg-blue-700 width-50px'>Using link tag</h1>
 
             <Link to='/admin' className='block p-4 border-b bg-gray-400'>Orders</Link>
