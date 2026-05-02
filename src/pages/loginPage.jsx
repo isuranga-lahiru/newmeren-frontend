@@ -18,10 +18,17 @@ async function handleLogin() {
     console.log("Email:", email);
     console.log("Password:", password);
   try {
-    const response = await axios.post("http://localhost:3000/users/login", {
-      email: email,
-      password: password
-    });
+
+    //this is beffore creating api.js file
+  //   const response = await axios.post("http://localhost:3000/users/login", {
+  //     email: email,
+  //     password: password
+  //   }
+  // )
+  const response = await api.post("/users/login", {
+    email: email,
+    password: password
+  });
     console.log(response);
     toast.success("Login successful!"); // Show a success toast message
   } catch(error) {
