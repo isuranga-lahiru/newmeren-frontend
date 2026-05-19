@@ -6,6 +6,7 @@ import RegisterPage from './pages/registerPage'
 import AdminPage from './pages/adminPage'
 import TestPage from './pages/test'
 import { Toaster } from 'react-hot-toast';
+
 function App() {
   return (
     <div className='w-full  h-screen '>
