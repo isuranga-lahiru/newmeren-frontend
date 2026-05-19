@@ -1,27 +1,50 @@
 import { Routes, Route } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import { FaCartShopping } from 'react-icons/fa6'
+import { FaGift } from 'react-icons/fa6'
+import { FaUser } from 'react-icons/fa6'
+import React from 'react'
+import AdminProductPage from './admin/adminProductPage'
+
 
 export default function AdminPage() {
   return (
-    <div className='w-full h-full flex bg-purple-600'>
+    <div className='w-full h-full flex bg-primary'>
 
-        <div className='w-75 h-full bg-white flex flex-col'>
+        <div className='w-[300px] shrink-0 h-full bg-white flex flex-col shadow-2xl'>
+
+            <div className='w-full h-[100px] flex items-center bg-gray-100 px-5 py-2.5  '>
+
+                <img src="logo.png" alt="Admin logo" className='  h-40 object-cover' />
+
+            </div>
+
+            <Link to="/admin" className='w-full  p-4 text-xl text-gray-700 font-bold flex   items-center gap-4'>
+                <FaCartShopping />
+                <span  className='w-full h-full block '>Orders</span>
+            </Link>
+
+            <Link to="/admin/products" className='w-full  p-4 text-xl text-gray-700 font-bold flex   items-center gap-4'>
+                <FaGift />
+                <span  className='w-full h-full block '>Products</span>
+            </Link>
+
+            <Link to="/admin/users" className='w-full  p-4 text-xl text-gray-700 font-bold flex   items-center gap-4'>
+                <FaUser />
+                <span  className='w-full h-full block '>Users</span>
+            </Link>
             
-            <h1 className='text-xl font-bold p-4 bg-blue-700 width-50px'>Using link tag</h1>
 
-            <Link to='/admin' className='block p-4 border-b bg-gray-400'>Orders</Link>
-            <Link to='/admin/products' className='block p-4 border-b bg-gray-400'>Products</Link>
-            <Link to='/admin/users' className='block p-4 border-b bg-gray-400'>Users</Link>
-{/* Using link tag will not cause the page to reload and will keep the state of the application */}
-
+            
         </div>
 
-        <div className='w-[calc(100%-300px)] h-full bg-yellow-200'>
+        <div className='flex-1 h-full'>
 
             <Routes>
-                <Route path='/' element={<h1>Orders Page</h1>}></Route>
-                <Route path='/products' element={<h1>Products Page</h1>}></Route>
-                <Route path='/users' element={<h1>Users Page</h1>}></Route>
+                <Route path="" element={<h1>Orders Page</h1>} />
+                <Route path="products" element={<AdminProductPage/>} />
+                <Route path="users" element={<h1>Users Page</h1>} />
+
             </Routes>
 
 
